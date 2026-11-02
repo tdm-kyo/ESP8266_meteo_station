@@ -104,13 +104,15 @@ void loop() {
   MDNS.update();
   sht4.getEvent(&humidity, &temp);
 
+  //remove comment for serial console debug info
   /*
   Serial.print("Temp: ");
   Serial.print(temp.temperature);
-  Serial.print(" °C   -   Umidità: ");
+  Serial.print(" °C   -   Hum: ");
   Serial.print(humidity.relative_humidity);
   Serial.println(" %");
   */
+  
   server.handleClient();
   delay(1000);
 }
